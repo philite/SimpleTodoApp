@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="500dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dimen_larger"
+    android:paddingVertical="@dimen/dimen_larger">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/dialog_todo_add_task_header_label"
+        android:textAppearance="?textAppearanceHeadline6" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/addTaskTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_larger">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/addTaskTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/dialog_todo_add_task_hint_label" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addTaskButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_larger"
+        android:text="@string/dialog_todo_add_task_action_add_label" />
+
+</LinearLayout>
