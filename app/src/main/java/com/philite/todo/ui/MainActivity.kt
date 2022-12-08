@@ -9,7 +9,7 @@ import com.philite.todo.TaskLocalDataSource
 import com.philite.todo.databinding.ActivityMainBinding
 import com.philite.todo.view.TaskAdapter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AddTaskDialogFragment.OnAddTaskComplete {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var mViewModel: MainViewModel
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         binding.taskRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.taskRecyclerView.adapter = taskAdapter
         binding.addFloatingActionButton.setOnClickListener {
-            AddTaskDialogFragment(taskLocalDataSource).show(supportFragmentManager, null)
+            AddTaskDialogFragment(this).show(supportFragmentManager, null)
         }
     }
 
@@ -52,5 +52,9 @@ class MainActivity : AppCompatActivity() {
         mViewModel.tasks.observe(this) {
             taskAdapter.insertTasks(it)
         }
+    }
+
+    override fun onAddTask(taskName: String) {
+        mViewModel.addTask(taskName)
     }
 }

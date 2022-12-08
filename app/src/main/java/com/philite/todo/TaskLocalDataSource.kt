@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface TaskLocalDataSource {
     fun getTasks(): Flow<List<Task>>
-    fun saveTask(task: Task)
+    fun saveTasks(tasks: List<Task>)
 }
